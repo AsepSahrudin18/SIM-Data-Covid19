@@ -55,6 +55,20 @@ const StyledForm = styled.div`
     color: red;
   }
 
+  button {
+    background-color: #0496ff;
+    color: white;
+    padding: 10px 10px;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 1rem;
+    border: none;
+    font-weight: bold;
+  }
+
+  button:hover {
+    background-color: #118ab2;
+  }
   /* Medium Screen */
   @media screen and (min-width: 768px) {
     margin-bottom: 5rem;

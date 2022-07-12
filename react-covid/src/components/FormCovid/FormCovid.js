@@ -1,7 +1,6 @@
 import assets from "../../Assets/images/conceptual.svg";
 import { useState } from "react";
 import StyledForm from "./Form.styled";
-import Button from "../ui/Button";
 
 function FormCovid(props) {
   const { provs, setProvs } = props;
@@ -114,7 +113,7 @@ function FormCovid(props) {
             )}
 
             {/* <button>Submit</button> */}
-            <Button>Submit</Button>
+            <button>Submit</button>
           </form>
         </div>
       </section>
