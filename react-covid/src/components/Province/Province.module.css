@@ -1,0 +1,24 @@
+/* 
+* Small screen
+*/
+.row__table td {
+  border-collapse: collapse;
+  border: 1px solid #999;
+  padding: 5px 25px;
+}
+/* 
+* Medium screen
+*/
+@media (min-width: 768px) {
+  .row__table td {
+    padding: 8px 50px;
+  }
+}
+/* 
+* Large screen 
+*/
+@media (min-width: 992px) {
+  .row__table td {
+    padding: 14px 60px;
+  }
+}

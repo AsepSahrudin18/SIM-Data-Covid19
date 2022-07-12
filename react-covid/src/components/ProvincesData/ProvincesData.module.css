@@ -1,0 +1,55 @@
+/* 
+* Small screen 
+*/
+.container {
+  margin: 2rem;
+}
+.table__title {
+  color: #0496ff;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 5rem;
+}
+.table__text {
+  color: #118ab2;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.table__container {
+  display: flex;
+  width: auto;
+  overflow-x: auto;
+}
+
+.group__table {
+  text-align: center;
+  border-collapse: collapse;
+  border: 1px solid #999;
+}
+
+th {
+  color: white;
+  background-color: #0496ff;
+  border: 1px solid #999;
+  border-collapse: collapse;
+  padding: 6px 30px;
+}
+
+/* 
+* Medium screen
+*/
+@media (min-width: 768px) {
+  th {
+    padding: 8px 50px;
+  }
+}
+@media (min-width: 992px) {
+  .table__container {
+    justify-content: center;
+  }
+  th {
+    padding: 14px 60px;
+  }
+}
