@@ -1,8 +1,6 @@
 import styles from "./Province.module.css";
 
-function Province(props) {
-  const { provin } = props;
-
+function Province({ provin }) {
   return (
     <>
       <tr className={styles.row__table}>

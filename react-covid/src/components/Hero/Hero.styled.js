@@ -4,12 +4,13 @@ const StyledHero = styled.div`
   section {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    margin: 1rem;
   }
 
   .hero__left {
     margin-bottom: 1rem;
+    text-align: center;
+    margin: 1rem;
+    margin-bottom: 2rem;
   }
 
   h2 {
@@ -27,21 +28,13 @@ const StyledHero = styled.div`
 
   p {
     color: #64748b;
-    margin-bottom: 1rem;
     text-align: justify;
   }
-
-  button {
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 10px;
-    background-color: #0496ff;
-    color: #fff;
-    font-weight: bold;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
-  }
-  button:hover {
-    background-color: #118ab2;
+  .vertical_row {
+    border-left: 8px solid #0496ff;
+    height: auto;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
   }
 
   img {
@@ -52,29 +45,30 @@ const StyledHero = styled.div`
 
   /* Medium Screen */
   @media screen and (min-width: 768px) {
-    font-size: 1rem;
+    section {
+      flex-direction: row;
+      justify-content: space-between;
+      .hero__left {
+        flex-basis: 50%;
+        text-align: left;
+        padding-right: 2rem;
+      }
+
+      .hero__right {
+        flex-basis: 50%;
+        align-items: right;
+        padding-left: 2rem;
+        justify-content: center;
+        display: flex;
+        padding-top: 4rem;
+        padding-bottom: 3rem;
+      }
+    }
   }
 
   /* Large Screen */
   @media screen and (min-width: 992px) {
     max-width: 1200px;
-
-    section {
-      flex-direction: row;
-      justify-content: space-between;
-      margin-right: 4rem;
-      margin-left: 4rem;
-    }
-
-    .hero__left {
-      flex-basis: 40%;
-      text-align: left;
-    }
-
-    .hero__right {
-      flex-basis: 50%;
-      align-items: right;
-    }
   }
 `;
 export default StyledHero;

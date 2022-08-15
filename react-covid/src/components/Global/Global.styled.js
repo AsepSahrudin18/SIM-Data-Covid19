@@ -3,10 +3,11 @@ import styled from "styled-components";
 const StyledGdata = styled.div`
   section {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    width: 18rem;
-    height: 15rem;
+    width: 15rem;
+    height: auto;
     border-radius: 15px;
-    margin: 1rem;
+    margin: 0.5rem;
+    padding: 1rem;
   }
 
   h2 {
@@ -15,31 +16,20 @@ const StyledGdata = styled.div`
 
   h1 {
     color: #0496ff;
-    margin: 0 auto;
   }
 
   /* Medium Screen */
   @media screen and (min-width: 768px) {
     section {
-      width: 15rem;
-      height: 10rem;
-      margin: 0.5rem;
+      width: 12rem;
     }
   }
 
   /* Large Screen */
   @media screen and (min-width: 992px) {
     section {
-      width: 20rem;
-      height: 12rem;
-      margin: 0.7rem;
-    }
-    h2 {
-      margin-bottom: 2rem;
-    }
-
-    h2 {
-      margin-bottom: 3rem;
+      width: 18rem;
+      height: auto;
     }
   }
 `;

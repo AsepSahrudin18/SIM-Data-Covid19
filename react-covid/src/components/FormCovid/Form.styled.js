@@ -1,28 +1,12 @@
 import styled from "styled-components";
 
-const StyledForm = styled.div`
-  /* Small Screen */
-  margin: 5rem auto;
-  padding: 1rem;
-
-  .form__right {
-    padding-right: 10px;
-  }
-
-  img {
-    display: none;
-  }
-
+const StyledForm = styled.section`
+  /* Small screen */
   h2 {
     color: #0496ff;
     margin-bottom: 0.8rem;
     font-size: 1.8rem;
     text-align: center;
-  }
-
-  h5 {
-    text-align: center;
-    color: #118ab2;
   }
 
   label {
@@ -33,124 +17,65 @@ const StyledForm = styled.div`
   }
 
   select {
-    background-color: white;
-    margin-top: 0.4rem;
     width: 100%;
-    padding: 10px 10px;
+    padding: 12px 20px;
+    margin-bottom: 1rem;
     border-radius: 10px;
+    margin-top: 10px;
+    background-color: white;
     border-color: #0496ff;
+    appearance: none;
   }
 
   input {
-    padding: 10px 10px;
-    border-radius: 10px;
-    background-color: none;
-    width: 92%;
-    margin-top: 0.4rem;
-    border-color: #0496ff;
-    margin: 0 auto;
-  }
-
-  p {
-    color: red;
-  }
-
-  button {
-    background-color: #0496ff;
-    color: white;
-    padding: 10px 10px;
-    border-radius: 10px;
     width: 100%;
-    margin-top: 1rem;
-    border: none;
-    font-weight: bold;
+    padding: 12px 20px;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    border-color: #0496ff;
+    margin-top: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
   }
 
-  button:hover {
-    background-color: #118ab2;
+  img {
+    display: none;
   }
-  /* Medium Screen */
+
+  /* Medium screen */
   @media screen and (min-width: 768px) {
-    margin-bottom: 5rem;
+    section {
+      flex-direction: row;
+      justify-content: space-between;
+      display: flex;
+    }
 
     img {
-      max-width: 90%;
-      height: auto;
       display: flex;
+      max-width: 100%;
+      height: auto;
     }
 
     .form__left {
       flex-basis: 50%;
-      align-items: center;
       display: flex;
+      padding: 1rem;
     }
 
     .form__right {
       flex-basis: 50%;
+      padding: 1rem;
     }
+  }
+  /* Large screen */
+  .form__left {
+    display: flex;
+    padding: 3rem;
+  }
 
-    section {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    input {
-      width: auto;
-      margin: 0.2rem;
-    }
-
-    select {
-      padding: 8px 8px;
-      width: auto;
-      margin: 0.3rem;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      max-width: 90%;
-      margin: 0 auto;
-    }
-
-    label {
-      margin-top: 0.5rem;
-    }
-
-    h2 {
-      margin-bottom: 0.2rem;
-    }
-
-    /* Large Screen */
-    @media screen and (min-width: 992px) {
-      max-width: 100%;
-      height: auto;
-      border-radius: 0px;
-
-      input {
-        width: auto;
-        margin: 0.2rem;
-        max-width: auto;
-        padding: 15px 15px;
-      }
-
-      select {
-        padding: 15px 15px;
-      }
-
-      h2 {
-        font-size: 2.8rem;
-        margin-bottom: 1rem;
-      }
-
-      p {
-        margin-left: 2.1rem;
-        color: red;
-      }
-
-      img {
-        margin-right: 1rem;
-      }
-    }
+  .form__right {
+    padding: 3rem;
   }
 `;
 export default StyledForm;

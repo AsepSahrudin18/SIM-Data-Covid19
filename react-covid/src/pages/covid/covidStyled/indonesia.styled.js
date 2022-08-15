@@ -25,6 +25,7 @@ const StyledInd = styled.div`
 
   /* Large Screen */
   @media screen and (min-width: 992px) {
+    padding: 3rem;
     img {
       max-width: 100%;
       height: auto;

@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-const StyledNav = styled.div`
-  /* Small Screen */
+const Conteiner = styled.div`
   background-color: #0496ff;
   padding: 1rem;
   color: #fff;
-
+`;
+const StyledNav = styled.div`
   a {
     text-decoration: none;
     color: white;
@@ -17,10 +17,9 @@ const StyledNav = styled.div`
   }
 
   h1 {
-    font-size: 2rem;
     text-align: left;
     margin: 0 auto;
-    font-weight: bold;
+    font-size: 2.4rem;
   }
 
   ul {
@@ -36,10 +35,13 @@ const StyledNav = styled.div`
   }
   li {
     margin-bottom: 0.3rem;
-    font-size: 1rem;
-    text-indent: 1rem;
-    line-height: 2rem;
     text-align: left;
+    text-indent: 0.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+
+  li {
   }
 
   /* Medium Screen */
@@ -73,3 +75,4 @@ const StyledNav = styled.div`
   }
 `;
 export default StyledNav;
+export { Conteiner };

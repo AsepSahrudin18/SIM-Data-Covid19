@@ -1,35 +1,34 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Button = styled.button`
-  button {
-    background-color: #0496ff;
-    color: white;
-    padding: 10px 10px;
-    border-radius: 10px;
-    width: 100%;
-    margin-top: 1rem;
-    border: none;
-    font-weight: bold;
-  }
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
 
-  button:hover {
-    background-color: #118ab2;
-  }
+  /** 
+  * Mengirimkan props ke komponen
+  * props diakses melalui anonymous function
+  */
 
-  /* medium screen */
-  @media screen and (min-width: 768px) {
-    button {
-      padding: 8px 8px;
-      width: auto;
+  background-color: ${function (props) {
+    if (props.variant === "primary") {
+      return "#0496ff";
+    } else if (props.variant === "secondary") {
+      return "red";
+    } else {
+      return "#4361ee";
     }
-  }
+  }};
 
-  /* large screen */
-  @media screen and (min-width: 992px) {
-    button {
-      padding: 15px 15px;
-    }
-  }
+  ${(props) =>
+    props.full &&
+    css`
+      display: block;
+      width: 100%;
+    `}
 `;
-
 export default Button;

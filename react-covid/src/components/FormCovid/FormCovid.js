@@ -1,14 +1,36 @@
 import assets from "../../Assets/images/conceptual.svg";
 import { useState } from "react";
 import StyledForm from "./Form.styled";
+import Alert from "../Alert";
+import Button from "../ui/Button";
 
 function FormCovid(props) {
   const { provs, setProvs } = props;
 
   // Membuat state handle form
-  const [city, setCity] = useState("");
-  const [status, setStatus] = useState("");
-  const [count, setCount] = useState("");
+  // const [city, setCity] = useState("");
+  // const [status, setStatus] = useState("");
+  // const [count, setCount] = useState("");
+
+  // state handle form
+  const [formData, setFormData] = useState({
+    city: "",
+    status: "",
+    count: "",
+  });
+
+  // function handle change
+  function handleChange(e) {
+    // destructing name dan value
+    const { name, value } = e.target;
+
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  }
+
+  const { city, status, count } = formData;
 
   // Membuat state handle error
   const [isCountEmpty, setIsCountEmpty] = useState(false);
@@ -17,17 +39,17 @@ function FormCovid(props) {
   // Membuat state untuk menampilkan pesan alert ketika semua data terpenuhi
   const [isDataSucess, setIsDataSucess] = useState(false);
 
-  function handleCity(e) {
-    setCity(e.target.value);
-  }
+  // function handleCity(e) {
+  //   setCity(e.target.value);
+  // }
 
-  function handleStatus(e) {
-    setStatus(e.target.value);
-  }
+  // function handleStatus(e) {
+  //   setStatus(e.target.value);
+  // }
 
-  function handleCount(e) {
-    setCount(e.target.value);
-  }
+  // function handleCount(e) {
+  //   setCount(e.target.value);
+  // }
 
   function updateProvinces() {
     const index = provs.findIndex((item) => item.kota === city);
@@ -72,10 +94,11 @@ function FormCovid(props) {
           <h2>Form Covid</h2>
           <form onSubmit={handleSubmit}>
             {/* jika semua data sucess true: tampilkan pesan berhasil submit*/}
-            {isDataSucess ? <h5>Selamat data berhasil ditambahkan!</h5> : ""}
+            {isDataSucess && <Alert>Selamat data berhasil ditambahkan!</Alert>}
 
+            {/* handle city */}
             <label htmlFor="label">Provinsi</label>
-            <select name="provinsi" id="" onChange={handleCity} value={city}>
+            <select name="city" id="" onChange={handleChange} value={city}>
               {provs.map(function (provins) {
                 return (
                   <option key={provins.kota} value={provins.kota}>
@@ -85,35 +108,36 @@ function FormCovid(props) {
               })}
             </select>
             {/* jika option true: tampilkan data */}
-            {isProvEmpty ? <p> Pilih Provinsi untuk efisiensi data</p> : ""}
+            {isProvEmpty && <Alert>Pilih Provinsi untuk efisiensi data</Alert>}
 
+            {/* handle status */}
             <label htmlFor="label">Status</label>
-            <select name="status" id="" onChange={handleStatus} value={status}>
+            <select name="status" id="" onChange={handleChange} value={status}>
               <option value="kasus">Postif</option>
               <option value="sembuh">Sembuh</option>
               <option value="meninggal">Meninggal</option>
               <option value="dirawat">Dirawat</option>
             </select>
             {/* jika status error true: tampilkan  */}
-            {isStatusEmpty ? <p>Status Wajib diisi</p> : ""}
+            {isStatusEmpty && <Alert> Status Wajib diisi</Alert>}
 
+            {/* handle count */}
             <label htmlFor="label">Jumlah</label>
             <input
+              name="count"
               type="number"
               placeholder="0"
-              onChange={handleCount}
+              onChange={handleChange}
               value={count}
             />
 
             {/* jika jumlah error true: munculkan error */}
-            {isCountEmpty ? (
-              <p>Jumlah wajib diisi atau lebih besar dari 0</p>
-            ) : (
-              ""
+            {isCountEmpty && (
+              <Alert>Jumlah wajib diisi atau lebih besar dari 0</Alert>
             )}
-
-            {/* <button>Submit</button> */}
-            <button>Submit</button>
+            <Button variant="primary" full>
+              Submit
+            </Button>
           </form>
         </div>
       </section>

@@ -6,6 +6,7 @@ function GlobalData(props) {
     <StyledGdata>
       <section>
         <h2>{status}</h2>
+
         <h1>{value}</h1>
       </section>
     </StyledGdata>

@@ -8,13 +8,13 @@ import StyledInd from "./covid/covidStyled/indonesia.styled";
 function Home() {
   const [globals, setGlobals] = useState();
 
-  useEffect(async () => {
-    // akses API melalui axios
+  async function getPoster() {
     const response = await axios(ENDPOINTS.GLOBALS);
-
-    // simpan data ke state covid
-
     setGlobals(response.data);
+  }
+
+  useEffect(() => {
+    getPoster();
   }, []);
   console.log(globals);
 

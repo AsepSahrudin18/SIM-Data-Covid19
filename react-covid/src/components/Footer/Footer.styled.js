@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
-const StyledFooter = styled.div`
-  /* Small Screen */
+const Container = styled.div`
   background-color: #0496ff;
   padding: 1rem;
   color: #fff;
-
+`;
+const StyledFooter = styled.div`
+  /* Small Screen */
   a {
     text-decoration: none;
     color: #fff;
@@ -63,3 +64,4 @@ const StyledFooter = styled.div`
   }
 `;
 export default StyledFooter;
+export { Container };
