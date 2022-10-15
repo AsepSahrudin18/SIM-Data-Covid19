@@ -2,12 +2,12 @@ import Container from "../components/Container";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
-function Layout(props) {
+function Layout({ listItem, children }) {
   return (
     <>
-      <Navbar />
+      <Navbar listItem={listItem} />
       <main>
-        <Container>{props.children}</Container>
+        <Container>{children}</Container>
       </main>
       <Footer />
     </>
