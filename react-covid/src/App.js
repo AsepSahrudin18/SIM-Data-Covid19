@@ -7,13 +7,16 @@ import CardIndonesia from "./pages/covid/CardIndonesia";
 import TableProvinces from "./pages/covid/TableProvinces";
 import Home from "./pages/Home";
 import theme from "./utils/constants/theme";
+import menuItem from "./utils/constants/menuItem";
+import { useState } from "react";
 
 function App() {
+  const [listItem] = useState({ menuItem });
   return (
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Layout>
+        <Layout listItem={listItem.menuItem}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/covid/indonesia" element={<CardIndonesia />} />
